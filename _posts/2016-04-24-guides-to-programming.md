@@ -3,7 +3,8 @@ layout: post
 title: 编程入门指南
 ---
 
-### 启蒙
+## 启蒙
+
 1. [笨方法学Python](http://learnpythonthehardway.org/book/)
 2. [MIT计算思维和数据科学导论](http://www.xuetangx.com/courses/MITx/6_00_2x/2014_T2/about)：MOOC 是学习编程的一个有效途径。虽然该课程的教学语言为Python，但作为一门优秀的导论课，它强调学习计算机科学领域里的重要概念和范式，而不仅仅是教你特定的语言。如果你不是科班生，这能让你在自学时开阔眼界；课程内容：计算概念，Python编程语言，一些简单的数据结构与算法，测试与调试。
 **支线任务**：
@@ -17,7 +18,8 @@ title: 编程入门指南
 
 ---
 
-### 入门
+## 入门
+
 1. [计算机程序的构造与解释(SICP)](https://mitpress.mit.edu/sicp/full-text/book/book.html)：在阅读SICP之前，你也许能通过调用几个函数解决一个简单问题。但阅读完SICP之后，你会学会如何将问题抽象并且分解，从而处理更复杂更庞大的问题，这是编程能力巨大的飞跃，这会在本质上改变你思考问题以及用代码解决问题的方式。此外，SICP的教学语言为 Scheme，可以让你初步了解函数式编程。更重要的是，他的语法十分简单，你可以很快学会它，从而把更多的时间用于学习书中的编程思想以及复杂问题的解决之道上。
 	*辅助资源*：
 	- [Udacity CS212 Design of Computer Program](https://www.udacity.com/course/design-of-computer-programs--cs212)：由Google研究主管Peter Norvig 主讲，教学语言为 Python，内容有一定难度。
@@ -28,10 +30,9 @@ title: 编程入门指南
 	- **练手项目**：[Mega Project List](https://github.com/karan/Projects/)
 2. [计算机系统要素:从零开始构建现代计算机](https://book.douban.com/subject/1998341/)：这本书会教会你从最基本的 Nand 门开始构建计算机，直到俄罗斯方块在你的计算机上顺利运行。 它会贯穿你的整个编程入门阶段，你入门阶段的目标就是坚持完成这本书的所有项目（包括一个最简的编译器与操作系统）。为了完全搞定这本书，为了继续打好根基。为了将来的厚积薄发，在下面这几个方面你还要做足功课（注意：下面的内容没有绝对意义上的先后顺序）。
 
----
+### 计算机系统基础
 
-#### 计算机系统基础
-1. [深入理解计算机系统(CSAPP)](https://book.douban.com/subject/5333562/)：这本书只是 CMU的**计算机系统导论**的教材而已。CMU的计算机科学专业相对较偏软件，该书就是从一个程序员的视角观察计算机系统，以**==程序在计算机中如何执行==**为主线，全面阐述计算机系统内部实现的诸多细节。如果觉得枯燥可以参考如下的一门Coursera上的MOOC（`软硬件接口`）。完成这本书后，你会具备坚实的系统基础，也具有了学习操作系统，编译器，计算机网络等内容的先决条件。当学习更高级的系统内容时，翻阅一下此书的相应章节，同时编程实现其中的例子，一定会对书本上的理论具有更加感性的认识，真正做到经手的代码，从上层设计到底层实现都了然于胸，并能在脑中回放数据在网络->内存->缓存->CPU的流向。
+1. [深入理解计算机系统(CSAPP)](https://book.douban.com/subject/5333562/)：这本书只是 CMU的**计算机系统导论**的教材而已。CMU的计算机科学专业相对较偏软件，该书就是从一个程序员的视角观察计算机系统，以**程序在计算机中如何执行**为主线，全面阐述计算机系统内部实现的诸多细节。如果觉得枯燥可以参考如下的一门Coursera上的MOOC（`软硬件接口`）。完成这本书后，你会具备坚实的系统基础，也具有了学习操作系统，编译器，计算机网络等内容的先决条件。当学习更高级的系统内容时，翻阅一下此书的相应章节，同时编程实现其中的例子，一定会对书本上的理论具有更加感性的认识，真正做到经手的代码，从上层设计到底层实现都了然于胸，并能在脑中回放数据在网络->内存->缓存->CPU的流向。
 	*辅助资源*：
 	- [软硬件接口](https://www.coursera.org/course/hwswinterface)：这门课的内容是 CSAPP 的一个子集，但是最经典的实验部分都移植过来了。
 	- [C程序设计语言](https://book.douban.com/subject/1139336/)：回顾一下C语言的知识。
@@ -40,9 +41,8 @@ title: 编程入门指南
 3. [UNIX编程艺术](https://book.douban.com/subject/1467587/)
 4. [折腾UN*X](http://heather.cs.ucdavis.edu/~matloff/unix.html)
 
----
+### 数据结构与算法基础
 
-#### 数据结构与算法基础
 1. [算法导论](https://book.douban.com/subject/1885170/)：读第一遍的时候考虑跳过习题和证明。
 	*辅助资源*：
 	- [数据结构与算法分析](https://book.douban.com/subject/1139426/)
@@ -52,9 +52,8 @@ title: 编程入门指南
 	- [编程珠玑](https://book.douban.com/subject/3227098/)
 	- [程序设计实践](https://book.douban.com/subject/1173548/)
 
----
+### 编程语言基础
 
-#### 编程语言基础
 1. [C++ Primer](https://book.douban.com/subject/25708312/)
 	*可选进阶*：
 	- 高效使用：[Effective C++](https://book.douban.com/subject/1842426/)
@@ -67,14 +66,16 @@ title: 编程入门指南
 
 ---
 
-### 必要的技能
+## 必要的技能
+
 1. **学好英语**，*参考*：[把你的英语用起来](https://book.douban.com/subject/3748247/)
 2. [学会提问](https://book.douban.com/subject/1504957/)，学会搜索引擎的[高级搜索](https://support.google.com/websearch/answer/35890?hl=zh-Hans)，去[Stack Overflow](http://stackoverflow.com/)或[知乎](https://www.zhihu.com/)提问前，读读:[what have you tried?](http://mattgemmell.com/what-have-you-tried/)
 3. **不要做一匹独狼**：尝试搭建个人网站，像[这样](http://ezyang.com/)，学习[Markdown](https://zh.wikipedia.org/wiki/Markdown)与[LaTex](https://zh.wikipedia.org/wiki/LaTeX)，在Blog上记录自己的想法，订阅编程类博客：[Joel on Software](http://www.joelonsoftware.com/)，[Peter Norving](http://www.norvig.com/index.html)，[Coding Horror](http://blog.codinghorror.com/)
 
--------
+---
 
-### 小结
+## 小结
+
 1. **编程的入门期间你会遇到无数的困难，当你碰壁时试着尝试[费曼技巧](https://www.quora.com/How-can-you-learn-faster/answer/Acaz-Pereira)**：
 	- Step 1. 选择你需要理解的概念，用一张白纸写下来；
 	- Step 2. 假装你需要向小白解释这一概念，试着将需要阐述的内容写下来；
@@ -86,14 +87,15 @@ title: 编程入门指南
 
 ---
 
-### 后记
+## 后记
+
 如果你能设法完成以上的所有任务，恭喜你，你已经真正实现了编程入门。这意味着你在之后更深入的学习中，不会畏惧那些学习新语言的任务，不会畏惧那些**复杂**的API，更不会畏惧学习具体的技术，甚至感觉很容易。当然，为了掌握这些东西你依旧需要大量的练习，腰还是会疼，走路还是会费劲，一口气也上不了5楼。但我能保证你会在思想上有巨大的转变，获得极大的自信，看老师同学和 [CSDN](http://www.csdn.net/) 的眼光会变得非常微妙，虽然只是完成了编程入门，但已经成为了程序员精神世界的高富帅。不，我说错了，即使是高富帅也不会有强力精神力，他也会怀疑自己，觉得自己没钱就什么都不是了。但总之，你遵循指南好好看书，那就会体验**会当凌绝顶**的感觉。
 
 作者：@[萧井陌](https://www.zhihu.com/people/xiao-jing-mo), @[Badger](https://www.zhihu.com/people/badger23)
 
 - 2015年06月07日 v1.4 更新
 
-- 自由转载-非商用-非衍生-保持署名 | Creative Commons BY-NC-ND 3.0
+- 自由转载-非商用-非衍生-保持署名 \| Creative Commons BY-NC-ND 3.0
 
 - **[CoCode](http://cocode.cc/)**：**一个让大家学习、成长、相聚并获得乐趣的技术社区**。
 

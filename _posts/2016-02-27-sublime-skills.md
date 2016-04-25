@@ -3,7 +3,7 @@ layout: default
 title: Sublime 常见配置
 ---
 
-## 1.text3 中文文件名显示方框的问题
+## 1.text3 中文文件名显示方框
 
 解决办法：
 

@@ -6,16 +6,14 @@ title: Sublime Text 3 下配置C&C++编译环境
 Sublime text3提供了构建功能，它的构建系统（Build systems）可以运行一段外部命令，还可以捕获输出并显示。
 要在sublime text3中实现C/C\++代码的编译和运行，在本质上说也是调用外部的命令，Windows中也可以理解为执行一段cmd命令。
 目前C/C\++编译器最流行的就是gcc和g\++。
+安装编译器是后面所有工作的基础，如果没有编译器，后面的一切都无从谈起。在windows下使用gcc和g++，是通过安装MinGW实现的。
+
+
+# 编译环境
 
 ---
 
-### 关于gcc和g++
-
-安装编译器是后面所有工作的基础，如果没有编译器，后面的一切都无从谈起。在windows下使用gcc和g++，是通过安装MinGW实现的。
-
------
-
-### 安装MinGW
+## 安装MinGW
 
 [MinGW](http://www.mingw.org/)是Minimalist GNU on Windows的首字母缩写，安装后就可以使用很多的GNU工具。GNU（GNU’s Not Unix）是linux中的一个著名的项目，包含了gcc\g\++\gdb等工具。也就是说，安装MinGw后，就可以使用gcc和g\++命令了。
 
@@ -24,15 +22,12 @@ Sublime text3提供了构建功能，它的构建系统（Build systems）可以
 这是使用 `codeblocks-13.12mingw-setup` 安装后复制出来的。
 解压后，可以在 `MinGW/bin` 目录下找到gcc.exe和g\++.exe。把MinGW文件夹放到c盘根目录即可。
 
----
-
-### 配置环境变量
+## 配置环境变量
 
 右键计算机->属性->高级系统设置->环境变量，双击path，把gcc的路径`C:\MinGW\bin`添加进去。要注意前后的英文分号。
 
----
 
-### 在cmd中使用gcc
+## 在cmd中使用gcc
 
 假设有一个`hello.c`文件在Z盘的work目录下。首先要在cmd中进入此目录。方法可以是在work目录空白处按住Shift点击鼠标右键，选择“在此处打开命令窗口”；也可以使用cd命令进入。
 gcc的一般格式是：
@@ -42,9 +37,12 @@ gcc的一般格式是：
 
 成功编译生成了可执行文件`hello.exe`后就可以在cmd里运行了。
 
+
+# Sublime Text 3 下的编译系统
+
 ---
 
-### Sublime Text3默认的编译配置文件
+## 默认的编译配置文件
 
 在Sublime的安装目录的Packages文件夹中，有个文件叫`C++.sublime-package`。
 这个实际上是zip的压缩包包含了C\++的默认系统设置，修改后缀名为zip后解压，可以在里面找到`C++ Single File.sublime-build`文件，内容如下：
@@ -66,7 +64,6 @@ gcc的一般格式是：
 这是JSON格式的配置文件，可以看到 selector部分确实是C和C\++都选择的。
 建议把用户配置放到用户文件夹下，来代替默认的编译配置。
 
----
 
 ## 新建编译系统
 
@@ -106,7 +103,6 @@ Build System中除了选择具体的编译系统，还可以选择第一个：Au
 
 作用是是在新的cmd窗口运行。这样就可以对scanf等函数进行输入了。
 
----
 
 ### C++
 
@@ -157,13 +153,15 @@ gcc虽然可以编译C\++代码，但是不能进行C\++的连接函数库操作
         ]
     }
 
+
+# 其他
+
 ---
 
 ## 使用makefile编译多个文件
 
 sublime可以使用makefile来编译多个文件，以便支持稍大一点的工程项目。只要在侧边栏中打开相关的文件夹，确保文件夹中包含makefile文件。此时按下Ctrl+Shift+B ，会有make的选项，点击执行就可以了。
 
----
 
 ## sublime-build编译系统配置文件
 
@@ -171,9 +169,10 @@ sublime可以使用makefile来编译多个文件，以便支持稍大一点的�
 
 	“名称”: “值”
 
-例如
+例如：
 
 	“firstName” : “John”
+
 值中如果还有双引号要用转义  \” 来表示。
 
 | 名称 | 含义 |
@@ -186,9 +185,9 @@ sublime可以使用makefile来编译多个文件，以便支持稍大一点的�
 |variants	|用来替代主构建系统的备选。例如Run命令。会显示在tool的命令中。|
 |name	|只在variants下面有，设置命令的名称，例如Run。|
 
----
 
-### 支持的变量
+
+## 支持的变量
 
 只列举了用到的：
 
@@ -199,6 +198,7 @@ sublime可以使用makefile来编译多个文件，以便支持稍大一点的�
 |$file_name	|文件全名（含扩展名）, `e.g., Chapter1.txt`.|
 |$file_extension	|当前文件扩展名, `e.g., txt`.|
 |$file_base_name	|当前文件名（不包括扩展名）, `e.g., Document`.|
+
 
 
 变量的使用可以直接使用，也可以使用花括号括起来，例如：`${project_name}`
