@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 关于Jekyll
+title: 关于 Jekyll
 ---
 今天新安装了[ubuntu 16.04](http://www.ubuntu.org.cn/download/desktop), 感觉还不赖，虽然重启之后就遇到内部错误了，还好这次我不打算折腾。
 

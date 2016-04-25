@@ -1,6 +1,6 @@
 ---
 layout: default
-title: C语言编程--指针
+title: 指针小结
 ---
 
 ## 间接
