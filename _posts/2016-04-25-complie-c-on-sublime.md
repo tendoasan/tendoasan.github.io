@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Sublime下配置C&C++编译环境
+title: Sublime Text 3 下配置C&C++编译环境
 ---
 
 Sublime text3提供了构建功能，它的构建系统（Build systems）可以运行一段外部命令，还可以捕获输出并显示。
