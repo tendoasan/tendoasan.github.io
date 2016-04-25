@@ -3,9 +3,12 @@ layout: default
 title: Sublime 常见配置
 ---
 
-## 1.Sublime text3 中文文件名显示方框的问题。
+## 1.text3 中文文件名显示方框的问题
 
-解决办法：打开`Preference -> Settings-User`，最后一行加上`"dpi_scale":1.0`
+解决办法：
+
+打开`Preference -> Settings-User`，最后一行加上`"dpi_scale":1.0`
+
 我的`Settings-User`：
 
 	{
@@ -19,4 +22,4 @@ title: Sublime 常见配置
 	    "word_warp":"true",
 	    "dpi_scale":1.0
 	}
-　　
+
