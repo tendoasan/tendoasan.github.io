@@ -1,19 +1,46 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+permalink: /:year/:month/:day/:title.html
+paginate: 10
+markdown: redcarpet
 
-# Site settings
-title: tendoasan's blogs
-email: tjuywb@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  tendoasan的博客自留地。
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: tendoasan
-github_username:  tendoasan
+# 作者信息
+author: 
+  name: tendoasan
+  email: tjuywb@gmail.com
+  weibo: http://weibo.com/1896545711
+  github: http://github.com/tendoasan
+  linkedin: http://linkedin.com/in/wenbin-yu-36614b5a
+# 站点信息
+title: tendoasan的博客
+description: tendoasan的博客自留地
+url: 
+rss_url: /pages/atom.xml
 
-# Build settings
-markdown: kramdown
+# gavatar头像及Favicon
+gavatar: /public/img/tendoasan.jpg
+favicon: /public/img/tendoasan.jpg
+
+# google analytics 设置
+ga:
+  id: 
+  url: 
+
+# disqus 设置
+disqus:
+  shortname: tendoasan
+
+# 主题设置，自动激活某个标签
+active: 读书
+
+# 首页除了最新文章外显示分类
+cates: 
+  - Java
+  - Sublime
+
+# 中文本地化
+locals:
+  tags: 标签
+  about: 关于
+  newest: 最新文章
+  archive: 归档
+
+gems: [jekyll-paginate]
