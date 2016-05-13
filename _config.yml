@@ -96,7 +96,7 @@ JB :
   comments :
     provider : duoshuo
     duoshuo :
-      short_name : tendoasan
+      short_name : http://tendoasan.duoshuo.com/
     disqus :
       short_name : tendoasan
     livefyre :
