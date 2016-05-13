@@ -46,6 +46,9 @@ title: Java 环境配置
 	export PATH=${JAVA_HOME}/bin:$PATH
 
 注意等号两侧不要加入空格。
+更新：
+
+	source ~/.bashrc
 
 ## 4.检验是否安装成功
 打开终端输入：
