@@ -96,9 +96,9 @@ JB :
   comments :
     provider : duoshuo
     duoshuo :
-      short_name : liberize
+      short_name : tendoasan
     disqus :
-      short_name : liberize
+      short_name : tendoasan
     livefyre :
       site_id : 123
     intensedebate :
