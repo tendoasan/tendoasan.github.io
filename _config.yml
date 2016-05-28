@@ -145,4 +145,13 @@ JB :
 
 gems: [jekyll-paginate]
 
-markdown: kramdown
+highlight: true
+markdown: redcarpet
+redcarpet:
+  extensions:
+    - hard_wrap
+    - no_intra_emphasis
+    - autolink
+    - strikethrough
+    - fenced_code_blocks
+
