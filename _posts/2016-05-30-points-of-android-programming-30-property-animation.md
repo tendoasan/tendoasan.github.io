@@ -200,7 +200,7 @@ description: "Property Animation"
         }
 		```
 
-+ 颜色估值
++ 颜色值计算
 	+ 获取`Sunset`的颜色引用。 (`SunsetFragment.java`)
 
 		```java
