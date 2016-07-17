@@ -1,14 +1,12 @@
 ---
 layout: post
-title: "深入理解Looper、Handler&Message"
+title: "Android异步消息处理机制"
 category: "笔记"
 tags: "Android"
 keywords: ["Android","异步消息","Looper","Handler", "Message"]
 description: "深入理解Looper、Handler&Message"
 ---
 {% include JB/setup %}
-
-### Android 异步消息处理机制
 
 #### 深入理解Looper、Handler、Message三者关系
 
