@@ -249,12 +249,12 @@ Handler 、 Looper 、Message 这三者都是与 Android 异步消息处理线�
 
 	好了，总结完成，大家可能还会问，那么在Activity中，我们并没有显式地调用`Looper.prepare()`和`Looper.loop()`方法，为啥Handler可以成功创建呢？这是因为在Activity的启动代码中，已经在当前UI线程调用了`Looper.prepare()`和`Looper.loop()`方法(`当前线程也是一个消息循环`)。
 
-+ 3、Handler post
+#### 3、Handler post
 
-	今天有人问我，你说Handler的`post()`方法创建的线程和UI线程有什么关系？
-	其实这个问题也是出现这篇博客的原因之一。这里需要说明，有时候为了方便，我们会直接写如下代码：
+今天有人问我，你说Handler的`post()`方法创建的线程和UI线程有什么关系？
+其实这个问题也是出现这篇博客的原因之一。这里需要说明，有时候为了方便，我们会直接写如下代码：
 
-	```java
+```java
 	mHandler.post(new Runnable(){
 		@Override
 		public void run(){
@@ -262,11 +262,11 @@ Handler 、 Looper 、Message 这三者都是与 Android 异步消息处理线�
 			mTxt.setText("yoxi");
 		}
 	});
-	```
+```
 
-	然后`run()`方法中可以写更新UI的代码，其实这个Runnable并没有创建什么线程，而是发送了一条消息，下面看源码：
+然后`run()`方法中可以写更新UI的代码，其实这个Runnable并没有创建什么线程，而是发送了一条消息，下面看源码：
 
-	```java
+```java
 	public final boolean post(Runnable r){
        	return  sendMessageDelayed(getPostMessage(r), 0);
     }
@@ -276,15 +276,15 @@ Handler 、 Looper 、Message 这三者都是与 Android 异步消息处理线�
         m.callback = r;
         return m;
     }
-	```
+```
 
-	可以看到，在`getPostMessage()`中，得到了一个Message对象，然后将我们创建的Runable对象作为callback属性，赋值给了此Message对象。
-	注：产生一个Message对象，可以new ，也可以使用`Message.obtain()`方法；两者都可以，但是更建议使用`obtain()`方法，因为Message内部维护了一个Message池用于Message的复用，避免使用new 重新分配内存。
-	`post()`方法中的`sendMessageDelayed(getPostMessage(r), 0)`方法，最终和`handler.sendMessage()`方法一样，调用了`sendMessageAtTime()`，然后调用了`enqueueMessage()`方法，给`msg.target`赋值为`handler`，最终加入MessagQueue。
-	可以看到，这里msg的callback和target都有值，那么会执行哪个呢？
-	其实上面已经贴过代码，就是`dispatchMessage()`方法：
+可以看到，在`getPostMessage()`中，得到了一个Message对象，然后将我们创建的Runable对象作为callback属性，赋值给了此Message对象。
+注：产生一个Message对象，可以new ，也可以使用`Message.obtain()`方法；两者都可以，但是更建议使用`obtain()`方法，因为Message内部维护了一个Message池用于Message的复用，避免使用new 重新分配内存。
+`post()`方法中的`sendMessageDelayed(getPostMessage(r), 0)`方法，最终和`handler.sendMessage()`方法一样，调用了`sendMessageAtTime()`，然后调用了`enqueueMessage()`方法，给`msg.target`赋值为`handler`，最终加入MessagQueue。
+可以看到，这里msg的callback和target都有值，那么会执行哪个呢？
+其实上面已经贴过代码，就是`dispatchMessage()`方法：
 
-	```java
+```java
 	public void dispatchMessage(Message msg) {
         if (msg.callback != null) {
             handleCallback(msg);
@@ -297,15 +297,15 @@ Handler 、 Looper 、Message 这三者都是与 Android 异步消息处理线�
             handleMessage(msg);
         }
     }
-	```
+```
 
-	第2行(`(msg.callback != null) `)，如果不为null，则执行callback回调，也就是我们的Runnable对象。
+第2行(`(msg.callback != null) `)，如果不为null，则执行callback回调，也就是我们的Runnable对象。
 
-	好了，关于Looper , Handler , Message 这三者关系上面已经叙述的非常清楚了。最后来张图解：
+好了，关于Looper , Handler , Message 这三者关系上面已经叙述的非常清楚了。最后来张图解：
 
-	![Looper、Handler和Message.png](https://raw.githubusercontent.com/tendoasan/MarkDownPhotos/master/Res/Looper%E3%80%81Handler%E5%92%8CMessage.jpg)
+![Looper、Handler和Message.png](https://raw.githubusercontent.com/tendoasan/MarkDownPhotos/master/Res/Looper%E3%80%81Handler%E5%92%8CMessage.jpg)
 
-+ 4、后话
+#### 4、后话
 
 其实Handler不仅可以更新UI，你完全可以在一个子线程中去创建一个Handler，然后使用这个handler实例在任何其他线程中发送消息，最终处理消息的代码都会在你创建Handler实例的线程中运行。
 
